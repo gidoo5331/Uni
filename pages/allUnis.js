@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import HomePage from '../features/Home/home'
+import HomePage from '../features/Home'
 import Layout from '../Layout'
 
 export default function Home() {
