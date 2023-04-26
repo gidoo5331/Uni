@@ -1,9 +1,11 @@
 import React from "react";
+import { useSession, signIn, signOut } from "next-auth/react"
 import Card from "../../components/Card";
 import HeroLayout from "../../components/HeroLayout";
 import HeroSection from "../../components/HeroSection";
 import SearchBar from "../../components/SearchBar";
-import { useRouter } from "next/router";
+import { Router } from "next/router";
+import Link from "next/link";
 
 const streaming = [
   {
@@ -72,10 +74,13 @@ const streaming = [
   },
 ];
 
-const HomePage = () => {
-  const router = useRouter();
+const AllUni = () => {
+  const { data: session } = useSession()
+  // const { push } = useRouter()
 
   return (
+    <>
+  {session ? 
     <div className="main bg-white">
 
       <HeroSection title="Universities in Ghana" title_red="Top 100%" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."/>
@@ -98,17 +103,24 @@ const HomePage = () => {
               />
               ))}
         </HeroLayout>
-        <div className="w-full">
-
-        <button type="button" 
-        onClick={()=> router.push('/allUnis')} 
-        className="bg-purple mx-auto text-sm text-white rounded py-3 px-10 hover:bg-gray-50 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-        >
-          View All Uni's</button>
-          </div>
       </div>
-    </div>
+    </div> 
+    : <>
+    <Link  href="/dashboard"></Link>
+    {/* { push('/signIn') } */}
+    </>
+}
+    </>
   );
 };
 
-export default HomePage;
+export default AllUni;
+
+// class AllUnis extends React.Component {
+//   static getInitialProps ({ res }) {
+//      if(!session) {
+//        res.redirect('/your-path');
+//      }
+//   }
+
+// }

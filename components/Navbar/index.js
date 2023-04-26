@@ -7,7 +7,7 @@ const navigation = [
   { name: "Home", href: "home", current: true },
   { name: "About", href: "about", current: false },
   { name: "Contact Us", href: "#", current: false },
-  { name: "Charts", href: "#", current: false },
+  { name: "All Uni's", href: "allUnis", current: false },
 ];
 const userbutton = [
   { name: "Sign Up", href: "#" },

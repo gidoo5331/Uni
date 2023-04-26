@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import HomePage from '../features/Home'
 import Layout from '../Layout'
+import AllUni from '../features/allUni'
+import { useSession, } from "next-auth/react"
+import {getSession} from "next-auth/react"
 
 export default function Home() {
   return (
@@ -11,8 +13,23 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <HomePage />
+        <AllUni />
       </Layout>
     </div>
   )
+}
+
+
+
+
+export const getServerSideProps = async ({req}) => {
+  const session = await getSession({req})
+  
+  if(!session)
+  return {
+      redirect : {
+          destination: "/signIn",
+          permanent: false,
+  },
+}
 }
