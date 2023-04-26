@@ -31,14 +31,8 @@ const SignIn = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    signIn('email', { callbackUrl: '/protected', email })
   }
-
-  // useEffect(() =>{
-  //   // const data =  user.email
-  //   console.log(data)
-
-  // // }, [user])
-  // }, [])
 
   return (
     <React.Fragment>

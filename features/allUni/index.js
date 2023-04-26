@@ -115,12 +115,3 @@ const AllUni = () => {
 };
 
 export default AllUni;
-
-// class AllUnis extends React.Component {
-//   static getInitialProps ({ res }) {
-//      if(!session) {
-//        res.redirect('/your-path');
-//      }
-//   }
-
-// }

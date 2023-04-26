@@ -39,11 +39,11 @@ import User from "../../../db/models/user";
             //   }}
         }),
         ],
-        // pages: {
-        //     signIn: "/login",
-        //     // signOut: "/"
-        //     newUser: "/new-user",
-        //     },
+        pages: {
+            signIn: "/signIn",
+            // signOut: "/"
+            // newUser: "/new-user",
+            },
 
           secret:  process.env.SECRET,
           callbacks: {},
