@@ -38,7 +38,10 @@ module.exports = {
         700: "#A9A9A9",
         800: "#B3B7B8",
       },
-      "purple": "#391D38",
+      "purple": {
+        DEFAULT: "#391D38",
+        100: "#3b0764"
+      },
       "white" : "#ffffff",
       "black" : {
         DEFAULT: "#000000",

@@ -102,7 +102,7 @@ const HomePage = () => {
 
         <button type="button" 
         onClick={()=> router.push('/allUnis')} 
-        className="bg-purple items-center text-sm text-white rounded py-3 px-10 hover:bg-gray-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+        className="bg-purple items-center text-sm text-white rounded py-3 px-10 hover:bg-purple-100 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
         >
           View All Uni's</button>
           </div>
